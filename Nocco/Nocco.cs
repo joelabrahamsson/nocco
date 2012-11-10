@@ -216,7 +216,14 @@ namespace Nocco {
 					{ @"<see\s*cref=""([^""]*)""\s*/>", "see `$1`"},
 					{ @"(</?example>|</?summary>|</?remarks>)", "" },
 				}
-			}}
+			}},
+            { ".aspx", new Language {
+                Name = "ASP.NET Web Forms",
+                Symbol = "<%--",
+                MarkdownMaps = new Dictionary<string, string> {
+                    { "--%>", ""}        
+                }
+            }}
 		};
 
 		// Get the current language we're documenting, based on the extension.
